@@ -14,8 +14,6 @@ import (
 func main() {
 	app := fiber.New()
 	
-
-
     // Endpoint: rapidoc 
 	app.Get("/rapidoc/*", rapidoc.New(rapidoc.Config{
 		Title:      "Pet Storage",
