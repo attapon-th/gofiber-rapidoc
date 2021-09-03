@@ -1,9 +1,3 @@
-# gofiber-rapidoc
-
-
-## Example
-
-```go
 package main
 
 import (
@@ -13,19 +7,15 @@ import (
 
 func main() {
 	app := fiber.New()
-	
+	// app.Get("/rapidoc/*", rapidoc.New())
 
-
-    // Endpoint: rapidoc 
 	app.Get("/rapidoc/*", rapidoc.New(rapidoc.Config{
 		Title:      "Pet Storage",
 		HeaderText: "API Pet",
-		SpecURL:    "/rapidoc/openapi.yaml", // get file: `./openapi.yaml` type: openapi v3
+		SpecURL:    "/rapidoc/openapi.yaml",
 		LogoURL:    "https://redocly.github.io/redoc/petstore-logo.png",
 	}))
 
 	app.Listen("127.0.0.1:8888")
 
 }
-
-```
